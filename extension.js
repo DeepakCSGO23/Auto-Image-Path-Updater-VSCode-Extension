@@ -10,9 +10,8 @@ let output;
 /**
  * @param {vscode.ExtensionContext} context
  */
+// This method is called when the extension is first installed 
 async function activate() {
-	// Getting current workspace
-	//const document=await vscode.workspace;
 	// Creating output channel
 	output=vscode.window.createOutputChannel("Auto Path Renamer");
 	output.show();
