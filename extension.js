@@ -5,17 +5,19 @@ const path = require('path');
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 let createdFiles=new Map();
+let watcher;
+let output;
 /**
  * @param {vscode.ExtensionContext} context
  */
-async function activate(context) {
+async function activate() {
 	// Getting current workspace
 	//const document=await vscode.workspace;
 	// Creating output channel
-	let output=vscode.window.createOutputChannel("Auto Path Renamer");
+	output=vscode.window.createOutputChannel("Auto Path Renamer");
 	output.show();
 	// Creating a FileSystemWatcher to watch all image files in the workspace
-	const watcher=vscode.workspace.createFileSystemWatcher('**/*.{png,jpg,jpeg,gif}');
+	watcher=vscode.workspace.createFileSystemWatcher('**/*.{png,jpg,jpeg,gif}');
 	// * For detecting moving of a image file we have to combine both creating & deleting file watcher so when a user moves the file it first gets deleted so we store the file name in a map then when the watcher detects a file creation we check if the file name matches with the file which is deleted
 	// Watch if any new image files are created
 	watcher.onDidCreate(async(uri)=>{
@@ -65,18 +67,19 @@ async function activate(context) {
 			createdFiles.delete(oldFileName);
 		}
 	})
-	
-	const disposable = vscode.commands.registerCommand('auto-path-renamer.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-		
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Auto Path Renamer!');
-	});
-	context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
-function deactivate() {}
+// This method is called when your extension is deactivated (to prevent memory leaks and memory freeup)
+function deactivate(){
+	// Disposing the watcher
+	if(watcher){
+		watcher.dispose();
+	}
+	// Disposing the output pipeline
+	if(output){
+		output.dispose();
+	}
+}
 
 module.exports = {
 	activate,
