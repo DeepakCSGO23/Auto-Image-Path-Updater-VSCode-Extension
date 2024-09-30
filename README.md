@@ -58,5 +58,3 @@ If you find Auto Path Renamer helpful and would like to support its continued de
 [Donate Here ❤️](https://buymeacoffee.com/deepakkn)
 
 Thank you for your support!
-
-**Enjoy smarter, cleaner code with Smart Commenting!**
