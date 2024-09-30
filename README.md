@@ -1,65 +1,62 @@
-# auto-path-renamer README
+## Auto Path Renamer
 
-This is the README for your extension "auto-path-renamer". After writing up a brief description, we recommend including the following sections.
+**Auto Path Renamer** is a Visual Studio Code extension designed to automatically update `src` paths in HTML files when image files are moved. This extension eliminates the need to manually edit paths, ensuring that all references to image files in your project remain accurate after a file is relocated.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Automatically detects when an image file (`.png`, `.jpg`, `.jpeg`, `.gif`) is moved or renamed.
+- Automatically updates the `src` attribute in HTML, JSON, CSS, and JS files to reflect the new file path.
+- Supports multiple file types for `src` path updates.
+- Logs all file changes in the output channel to provide clear feedback about what changes were made.
 
-For example if there is an image subfolder under your extension project workspace:
+### Example
 
-\!\[feature X\]\(images/feature-x.png\)
+If you move an image file from `assets/images/logo.png` to `assets/logo.png`, this extension will automatically update the `src` paths in relevant files from:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```html
+<img src="assets/images/logo.png" alt="Logo" />
+```
+
+to:
+
+```html
+<img src="assets/logo.png" alt="Logo" />
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code version 1.60.0 or higher.
+- No additional dependencies are required.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+This extension does not contribute any custom settings at the moment, but future releases may include configurable options.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- The extension works most of the time but occasionally misses path updates (approximately 5% failure rate). This is an area of ongoing improvement.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Initial release of Auto Path Renamer.
+- Automatically detects image file moves and updates `src` paths in HTML files.
 
 ---
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
 ## For more information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- [GitHub Repository](https://github.com/DeepakCSGO23/Auto-Image-Path-Updater-VSCode-Extension)
 
-**Enjoy!**
+---
+
+## Donations
+
+If you find Auto Path Renamer helpful and would like to support its continued development, consider making a donation. Your contributions help us maintain and improve the project!
+
+[Donate Here ❤️](https://buymeacoffee.com/deepakkn)
+
+Thank you for your support!
+
+**Enjoy smarter, cleaner code with Smart Commenting!**
