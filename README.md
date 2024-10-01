@@ -5,7 +5,7 @@
 ## Features
 
 - Automatically detects when image files (`.png`, `.jpg`, `.jpeg`, `.gif`,`.svg`,`.webp`) are moved or renamed.
-- Updates the `src` attribute in HTML, JSON, CSS, and JavaScript files to reflect the new image file path.
+- Updates the `src` attribute in HTML, JSON, CSS, JavaScript files and Javascript XML files to reflect the new image file path.
 - Logs all file changes in the output channel for transparency and debugging purposes.
 
 ### Example
@@ -42,9 +42,13 @@ There are currently no customizable settings in this version of the extension. F
 
 ### 1.0.0
 
-- Automatically updates image `src` paths in HTML, JSON, CSS, and JavaScript files when an image file is moved.
+- Automatically updates image `src` paths in HTML, JSON, CSS, JavaScript and Javascript XML files when an image file is moved.
 
 - Added Relative paths for 100% image path sync accuracy.
+
+### 1.0.1
+
+- Now supports Javascript XML files(.jsx).
 
 ## Contributing
 

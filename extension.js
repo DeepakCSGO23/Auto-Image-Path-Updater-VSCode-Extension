@@ -30,7 +30,7 @@ async function activate(){
 		// Checking if the file deleted is created i.e move operation
 		if(createdFiles.get(oldFileName)){
 			// Getting all the files in vscode workspace
-			const files=await vscode.workspace.findFiles('**/*.{html,json,css,js}','**/node_modules/**');
+			const files=await vscode.workspace.findFiles('**/*.{html,json,css,js,jsx}','**/node_modules/**');
 			// Creating a workspace edit to make changes to the files even when the files are not active or inactive. We no longer open and save every file for each change, Instead we use workspace edit to batch all changes together
 			const edit=new vscode.WorkspaceEdit();
 			// Getting the new file path i.e the path which the deleted file is created into

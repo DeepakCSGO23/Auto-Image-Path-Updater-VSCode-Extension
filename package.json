@@ -3,7 +3,7 @@
   "displayName": "Auto Image Path Updater",
   "description": "Auto Image Path Updater simplifies your workflow by automatically updating image file paths in HTML,CSS,Javascript and JSON files when images are moved within your workspace. This tool ensures that all references to images are accurate and up-to-date, saving you time and reducing errors.",
   "publisher": "DeepakKN",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "images/icon.png",
   "repository": {
     "type": "git",
