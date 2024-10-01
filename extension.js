@@ -40,13 +40,17 @@ async function activate(){
 				const document=await vscode.workspace.openTextDocument(file);
 				// Extract the text from the document
 				const text=document.getText();
+				// Calculate the relative path from the current file to the new image location
+                const currentFilePath = path.dirname(file.fsPath);
+                const newImagePath = path.join(vscode.workspace.workspaceFolders[0].uri.fsPath, newFilePath);
+                const relativePath = path.relative(currentFilePath, newImagePath).replace(/\\/g, '/');
 				// Regex initialization
                 const regex=new RegExp(`src\\s*=\\s*["']([^"']*${oldFileName}[^"']*)["']`,'g');
 				let match;
 				while((match=regex.exec(text))!==null){
 					const range=new vscode.Range(document.positionAt(match.index),document.positionAt(match.index+match[0].length));
 					// Takes the file it wants to edit , position of the old path & replace it with new filepath
-					edit.replace(file,range,`src="${newFilePath}"`);
+					edit.replace(file,range,`src="${relativePath}"`);
 				}
 			}
 			// Apply the workspace edit on the current workspace this makes sure all the files in the current workspace are saved at once

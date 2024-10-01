@@ -13,15 +13,11 @@
 
 If you move an image file from `assets/images/logo.png` to `assets/logo.png`, this extension will automatically update the `src` paths in relevant files from:
 
-```html
 <img src="assets/images/logo.png" alt="Logo" />
-```
 
 to:
 
-```html
 <img src="assets/logo.png" alt="Logo" />
-```
 
 ## Requirements
 
