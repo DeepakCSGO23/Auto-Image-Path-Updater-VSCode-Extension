@@ -1,56 +1,63 @@
-## Auto Image Path Updater
+# Auto Image Path Updater
 
-**Auto Path Renamer** is a Visual Studio Code extension designed to automatically update `src` paths in HTML files when image files are moved. This extension eliminates the need to manually edit paths, ensuring that all references to image files in your project remain accurate after a file is relocated.
+**Auto Image Path Updater** is a Visual Studio Code extension that helps developers automatically update `src` paths in HTML files when image files are moved. This extension saves you from the hassle of manually adjusting file paths, ensuring that all image references in your project stay correct after a file is relocated.
 
 ## Features
 
-- Automatically detects when an image file (`.png`, `.jpg`, `.jpeg`, `.gif`) is moved or renamed.
-- Automatically updates the `src` attribute in HTML, JSON, CSS, and JS files to reflect the new file path.
-- Supports multiple file types for `src` path updates.
-- Logs all file changes in the output channel to provide clear feedback about what changes were made.
+- Automatically detects when image files (`.png`, `.jpg`, `.jpeg`, `.gif`,`.svg`,`.webp`) are moved or renamed.
+- Updates the `src` attribute in HTML, JSON, CSS, and JavaScript files to reflect the new image file path.
+- Logs all file changes in the output channel for transparency and debugging purposes.
 
 ### Example
 
-If you move an image file from `assets/images/logo.png` to `assets/logo.png`, this extension will automatically update the `src` paths in relevant files from:
+If you move an image file from:
 
-<img src="assets/images/logo.png" alt="Logo" />
+`assets/images/logo.png`
 
 to:
 
+`assets/logo.png`
+
+the extension will update the path in your HTML file from:
+
+```html
+<img src="assets/images/logo.png" alt="Logo" />
+```
+
+to:
+
+```html
 <img src="assets/logo.png" alt="Logo" />
-
-## Requirements
-
-- Visual Studio Code version 1.60.0 or higher.
-- No additional dependencies are required.
+```
 
 ## Extension Settings
 
-This extension does not contribute any custom settings at the moment, but future releases may include configurable options.
+There are currently no customizable settings in this version of the extension. Future versions may include user-configurable options.
 
 ## Known Issues
 
-- The extension works most of the time but occasionally misses path updates (approximately 5% failure rate). This is an area of ongoing improvement.
+- Occasionally, the extension may miss updating paths in certain files (around a 5% failure rate). This is being actively improved.
 
 ## Release Notes
 
 ### 1.0.0
 
-- Initial release of Auto Path Renamer.
-- Automatically detects image file moves and updates `src` paths in HTML files.
+- Automatically updates image `src` paths in HTML, JSON, CSS, and JavaScript files when an image file is moved.
 
----
+- Added Relative paths for 100% image path sync accuracy.
 
-## For more information
+## Contributing
 
-- [GitHub Repository](https://github.com/DeepakCSGO23/Auto-Image-Path-Updater-VSCode-Extension)
+If you encounter any bugs or have suggestions for new features, feel free to raise an issue or submit a pull request on our GitHub repository.
 
----
+[GitHub Repository](https://github.com/DeepakCSGO23/Auto-Image-Path-Updater-VSCode-Extension)
 
-## Donations
+## Support
 
-If you find Auto Image Path Updater helpful and would like to support its continued development, consider making a donation. Your contributions help us maintain and improve the project!
+If this extension has helped improve your workflow, consider supporting its ongoing development!
 
 [Donate Here ❤️](https://buymeacoffee.com/deepakkn)
 
-Thank you for your support!
+---
+
+Thank you for using Auto Image Path Updater!

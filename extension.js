@@ -12,7 +12,7 @@ let watcher;
 // This method is called when the extension is first installed 
 async function activate(){
 	// Creating a FileSystemWatcher to watch all image files in the workspace
-	watcher=vscode.workspace.createFileSystemWatcher('**/*.{png,jpg,jpeg,gif}');
+	watcher=vscode.workspace.createFileSystemWatcher('**/*.{png,jpg,jpeg,gif,svg,webp}');
 	// * For detecting moving of a image file we have to combine both creating & deleting file watcher so when a user moves the file it first gets deleted so we store the file name in a map then when the watcher detects a file creation we check if the file name matches with the file which is deleted
 	// Watch if any new image files are created
 	watcher.onDidCreate(async(uri)=>{
