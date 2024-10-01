@@ -1,9 +1,10 @@
 {
   "name": "auto-image-path-path-updater",
   "displayName": "Auto Image Path Updater",
-  "description": "",
+  "description": "Auto Image Path Updater simplifies your workflow by automatically updating image file paths in HTML,CSS,Javascript and JSON files when images are moved within your workspace. This tool ensures that all references to images are accurate and up-to-date, saving you time and reducing errors.",
   "publisher": "DeepakKN",
   "version": "0.0.1",
+  "icon": "images/logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/DeepakCSGO23/Auto-Image-Path-Updater-VSCode-Extension"
