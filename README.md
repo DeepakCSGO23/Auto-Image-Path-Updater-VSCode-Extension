@@ -1,4 +1,4 @@
-## Auto Path Renamer
+## Auto Image Path Updater
 
 **Auto Path Renamer** is a Visual Studio Code extension designed to automatically update `src` paths in HTML files when image files are moved. This extension eliminates the need to manually edit paths, ensuring that all references to image files in your project remain accurate after a file is relocated.
 
@@ -53,7 +53,7 @@ This extension does not contribute any custom settings at the moment, but future
 
 ## Donations
 
-If you find Auto Path Renamer helpful and would like to support its continued development, consider making a donation. Your contributions help us maintain and improve the project!
+If you find Auto Image Path Updater helpful and would like to support its continued development, consider making a donation. Your contributions help us maintain and improve the project!
 
 [Donate Here ❤️](https://buymeacoffee.com/deepakkn)
 
