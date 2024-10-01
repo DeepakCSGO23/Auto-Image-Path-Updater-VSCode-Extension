@@ -1,8 +1,13 @@
 {
-  "name": "auto-path-renamer",
-  "displayName": "Auto Path Renamer",
+  "name": "auto-image-path-path-updater",
+  "displayName": "Auto Image Path Updater",
   "description": "",
+  "publisher": "DeepakKN",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeepakCSGO23/Auto-Image-Path-Updater-VSCode-Extension"
+  },
   "engines": {
     "vscode": "^1.93.0"
   },

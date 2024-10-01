@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-const vscode = require('vscode');
-const path = require('path');
+const vscode=require('vscode');
+const path=require('path');
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 let createdFiles=new Map();
@@ -10,7 +10,7 @@ let watcher;
  * @param {vscode.ExtensionContext} context
  */
 // This method is called when the extension is first installed 
-async function activate() {
+async function activate(){
 	// Creating a FileSystemWatcher to watch all image files in the workspace
 	watcher=vscode.workspace.createFileSystemWatcher('**/*.{png,jpg,jpeg,gif}');
 	// * For detecting moving of a image file we have to combine both creating & deleting file watcher so when a user moves the file it first gets deleted so we store the file name in a map then when the watcher detects a file creation we check if the file name matches with the file which is deleted
@@ -27,14 +27,14 @@ async function activate() {
 	watcher.onDidDelete(async(uri)=>{
 		// Getting the file name of file which was deleted
 		const oldFileName=path.basename(uri.fsPath);
-		// Getting the file path of file which was deleted
-		const oldFilePath=path.relative(vscode.workspace.workspaceFolders[0].uri.fsPath,uri.fsPath).replace(/\\/g,'/');
 		// Checking if the file deleted is created i.e move operation
 		if(createdFiles.get(oldFileName)){
 			// Getting all the files in vscode workspace
 			const files=await vscode.workspace.findFiles('**/*.{html,json,css,js}','**/node_modules/**');
 			// Creating a workspace edit to make changes to the files even when the files are not active or inactive. We no longer open and save every file for each change, Instead we use workspace edit to batch all changes together
 			const edit=new vscode.WorkspaceEdit();
+			// Getting the new file path i.e the path which the deleted file is created into
+			const newFilePath=createdFiles.get(oldFileName);
 			for(const file of files){
 				// First Open the text files if not opened
 				const document=await vscode.workspace.openTextDocument(file);
@@ -43,8 +43,6 @@ async function activate() {
 				// Regex initialization
                 const regex=new RegExp(`src\\s*=\\s*["']([^"']*${oldFileName}[^"']*)["']`,'g');
 				let match;
-				// Getting the new file path i.e the path which the deleted file is created into
-				const newFilePath=createdFiles.get(oldFileName);
 				while((match=regex.exec(text))!==null){
 					const range=new vscode.Range(document.positionAt(match.index),document.positionAt(match.index+match[0].length));
 					// Takes the file it wants to edit , position of the old path & replace it with new filepath
@@ -67,7 +65,7 @@ function deactivate(){
 	}
 }
 
-module.exports = {
+module.exports={
 	activate,
 	deactivate
 }
