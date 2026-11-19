@@ -339,6 +339,10 @@ This prevents file race conditions, writes changes instantaneously, and preserve
 
 ## Release Notes
 
+### 2.0.3
+
+- Improved README.md
+
 ### 2.0.2
 
 - Improved README.md
