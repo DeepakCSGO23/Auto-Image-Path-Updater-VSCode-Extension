@@ -13,6 +13,12 @@
   <a href="https://razorpay.me/@lonealpha">
     <img src="https://img.shields.io/badge/Donate-Razorpay-0C2340?style=for-the-badge&logo=razorpay&logoColor=white" alt="Donate via Razorpay" />
   </a>
+  <a href="https://buymeacoffee.com/deepakkn">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
+  </a>
+  <a href="https://github.com/sponsors/DeepakCSGO23">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
+  </a>
 </p>
 
 <p align="center">
@@ -369,6 +375,12 @@ If **Auto Image Path Updater** saves you time and keeps your projects free of br
 <p align="center">
   <a href="https://razorpay.me/@lonealpha">
     <img src="https://img.shields.io/badge/Donate-Razorpay-0C2340?style=for-the-badge&logo=razorpay&logoColor=white" alt="Donate via Razorpay" />
+  </a>
+  <a href="https://buymeacoffee.com/deepakkn">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
+  </a>
+  <a href="https://github.com/sponsors/DeepakCSGO23">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
   </a>
 </p>
 
