@@ -114,28 +114,28 @@ Auto Image Path Updater hooks directly into the VS Code Workspace File System ev
 
 ### Supported Document & Source Types
 
-| Document / Language | File Extensions | Syntax Patterns Detected & Updated |
-| :--- | :--- | :--- |
-| **HTML** | `.html` | `<img src="...">`, `<link href="...">`, `<source srcset="...">` |
-| **CSS / SCSS** | `.css` | `background-image: url(...)`, `@font-face / @import url(...)` |
-| **JavaScript** | `.js`, `.jsx` | `import logo from "..."`, `const img = import("...")` |
-| **TypeScript** | `.ts`, `.tsx` | `import hero from "..."`, `import("...")` |
-| **Markdown** | `.md` | `![Alt Text](./path/to/image.png)` |
-| **JSON** | `.json` | `"thumbnail": "./path/to/image.png"` |
+| Document / Language | File Extensions | Syntax Patterns Detected & Updated                              |
+| :------------------ | :-------------- | :-------------------------------------------------------------- |
+| **HTML**            | `.html`         | `<img src="...">`, `<link href="...">`, `<source srcset="...">` |
+| **CSS / SCSS**      | `.css`          | `background-image: url(...)`, `@font-face / @import url(...)`   |
+| **JavaScript**      | `.js`, `.jsx`   | `import logo from "..."`, `const img = import("...")`           |
+| **TypeScript**      | `.ts`, `.tsx`   | `import hero from "..."`, `import("...")`                       |
+| **Markdown**        | `.md`           | `![Alt Text](./path/to/image.png)`                              |
+| **JSON**            | `.json`         | `"thumbnail": "./path/to/image.png"`                            |
 
 ### Supported Image Formats
 
-| Format | Extension | Description |
-| :--- | :--- | :--- |
-| **PNG** | `.png` | Portable Network Graphics |
+| Format   | Extension       | Description                      |
+| :------- | :-------------- | :------------------------------- |
+| **PNG**  | `.png`          | Portable Network Graphics        |
 | **JPEG** | `.jpg`, `.jpeg` | Joint Photographic Experts Group |
-| **WebP** | `.webp` | Modern Web Picture Format |
-| **SVG** | `.svg` | Scalable Vector Graphics |
-| **GIF** | `.gif` | Graphics Interchange Format |
-| **AVIF** | `.avif` | AV1 Image File Format |
-| **ICO** | `.ico` | Windows Icon / Favicon |
-| **BMP** | `.bmp` | Bitmap Image File |
-| **TIFF** | `.tiff` | Tag Image File Format |
+| **WebP** | `.webp`         | Modern Web Picture Format        |
+| **SVG**  | `.svg`          | Scalable Vector Graphics         |
+| **GIF**  | `.gif`          | Graphics Interchange Format      |
+| **AVIF** | `.avif`         | AV1 Image File Format            |
+| **ICO**  | `.ico`          | Windows Icon / Favicon           |
+| **BMP**  | `.bmp`          | Bitmap Image File                |
+| **TIFF** | `.tiff`         | Tag Image File Format            |
 
 ---
 
@@ -257,7 +257,10 @@ When resolving the new path, `resolveNewPath` handles three path categories:
 
 ```javascript
 // 1. External URLs (http, https, data:) are strictly bypassed
-if (/^https?:\/\//i.test(matchedSrcValue) || matchedSrcValue.startsWith("data:")) {
+if (
+  /^https?:\/\//i.test(matchedSrcValue) ||
+  matchedSrcValue.startsWith("data:")
+) {
   return null;
 }
 ```
@@ -330,10 +333,16 @@ This prevents file race conditions, writes changes instantaneously, and preserve
 
 ## Release Notes
 
+### 2.0.2
+
+- Improved README.md
+
 ### 2.0.1
+
 - **Optimization**: Cleaned up demo media assets for a lightweight package distribution.
 
 ### 2.0.0
+
 - **Bidirectional Move Detection**: Re-architected file watcher handling to support both `delete -> create` and `create -> delete` event cycles across all operating systems.
 - **Root-Relative & Public URL Support**: Added smart resolution for leading-slash URLs (e.g., `/illustrations/image.webp`) commonly found in web apps and public asset folders.
 - **Expanded Syntax Coverage**: Added full support for CSS `url(...)`, Markdown images `![alt](...)`, and ES module `import` declarations.
@@ -344,9 +353,11 @@ This prevents file race conditions, writes changes instantaneously, and preserve
 - **Stability & Performance**: Fixed potential crashes when no workspace folder is open, prevented memory leaks via auto-expiring cache entries, and added automatic resource disposal.
 
 ### 1.0.1
+
 - Added support for JavaScript XML files (`.jsx`).
 
 ### 1.0.0
+
 - Initial release: basic image `src` updates for HTML, CSS, JavaScript, and JSON.
 
 ---
